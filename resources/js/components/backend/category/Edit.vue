@@ -15,8 +15,8 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="categoryId">Edit Category</label>
-                                    <input type="text" class="form-control" id="categoryId" placeholder="Add New Category" v-model="form.cat_name" name="cat_name" :class="{ 'is-invalid': form.errors.has('cat_name') }">
-                                    <has-error :form="form" field="cat_name"></has-error>
+                                    <input type="text" class="form-control" id="categoryId" placeholder="Add New Category" v-model="form.title" name="title" :class="{ 'is-invalid': form.errors.has('title') }">
+                                    <has-error :form="form" field="title"></has-error>
                                 </div>
 
                             </div>
@@ -49,7 +49,7 @@
         data(){
             return {
                 form: new Form({
-                    cat_name:''
+                    title:''
                 })
             }
         },

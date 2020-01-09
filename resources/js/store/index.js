@@ -2,6 +2,7 @@ export default {
     state:{
         category:[],
         subcategory:[],
+        item:[],
         // blogpost:[],
         // singlepost:[],
         // allcategories:[],
@@ -12,8 +13,11 @@ export default {
             return state.category
         },
         getSubcategory(state){
-            return state.post
+            return state.subcategory
         },
+        getItem(state){
+            return state.item
+        }
         // getblogPost(state){
         //     return state.blogpost
         // },
@@ -36,11 +40,18 @@ export default {
                     context.commit('categoreis',response.data.categories)
                 })
         },
-        getSubcategory(context){
+        allSubcategory(context){
             axios.get('/subcategory')
                 .then((response)=>{
                     console.log(response.data)
                     context.commit('subcategories',response.data.subcategories)
+                })
+        },
+        allItem(context){
+            axios.get('/item')
+                .then((response)=>{
+                    console.log(response.data)
+                    context.commit('items',response.data.items)
                 })
         },
         // getblogPost(context){
@@ -85,6 +96,9 @@ export default {
         },
         subcategories(state,payload){
             return state.subcategory = payload
+        },
+        items(state,payload){
+            return state.item = payload
         },
         // getblogPost(state,payload){
         //     return state.blogpost = payload

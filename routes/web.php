@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 // Route::get('/{any}', function () {
 //   return view('admin');
 // })->where('any', '.*');
@@ -32,10 +34,17 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('category/{id}','CategoryController@delete_category');
     Route::get('editcategory/{id}','CategoryController@edit_category');
     Route::post('update-category/{id}','CategoryController@update_category');
-// //SubCategory
+	//SubCategory
     Route::get('/subcategory','SubcategoryController@all_subcategory');
     Route::post('/add-subcategory','SubcategoryController@save_subcategory');
-    Route::get('/subcategory/{id}','SubcategoryController@delete_subcategory');
+    Route::get('/deleteSubcategory/{id}','SubcategoryController@delete_subcategory');
     Route::get('/editsubcategory/{id}','SubcategoryController@edit_subcategory');
     Route::post('/update-subcategory/{id}','SubcategoryController@update_subcategory');
+
+    //Item
+    Route::get('/item','ItemController@all_item');
+    Route::post('/add-item','ItemController@save_item');
+    Route::get('/deleteitem/{id}','ItemController@delete_item');
+    Route::get('/edititem/{id}','ItemController@edit_item');
+    Route::post('/update-item/{id}','ItemController@update_item');
 });

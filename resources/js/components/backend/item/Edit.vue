@@ -7,23 +7,29 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Update Subcategory</h3>
+                            <h3 class="card-title">Update Item</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form" @submit.prevent="updateSubcategory()">
+                        <form role="form" @submit.prevent="updateItem()">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="subcategoryId">Update Subcategory </label>
-                                    <input type="text" class="form-control" id="subcategoryId" placeholder="Add New Subcategory" v-model="form.title" name="title" :class="{ 'is-invalid': form.errors.has('title') }">
+                                    <label for="itemId">Title </label>
+                                    <input type="text" class="form-control" id="itemId" placeholder="Add New Item" v-model="form.title" name="title" :class="{ 'is-invalid': form.errors.has('title') }">
                                     <has-error :form="form" field="title"></has-error>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="itemId">Price</label>
+                                    <input type="text" class="form-control" id="itemId" placeholder="Add New Item" v-model="form.price" name="price" :class="{ 'is-invalid': form.errors.has('price') }">
+                                    <has-error :form="form" field="price"></has-error>
                                 </div>
 
                                 <div class="form-group" >
                                     <label>Select</label>
-                                    <select class="form-control" :class="{ 'is-invalid': form.errors.has('cat_id') }" v-model="form.cat_id">
+                                    <select class="form-control" :class="{ 'is-invalid': form.errors.has('cat_id') }" v-model="form.subcat_id">
                                         <option disabled value="">Select One</option>
-                                        <option :value="category.id" v-for="category in getallCategory">{{category.title}}</option>
+                                        <option :value="subcategory.id" v-for="subcategory in getallSubCategory">{{subcategory.title}}</option>
 
                                     </select>
                                     <has-error :form="form" field="cat_id"></has-error>
@@ -55,33 +61,34 @@
             return{
                 form: new Form({
                     title:'',
-                    cat_id:'',
+                    subcat_id:'',
+                    price:''
                 })
             }
         },
         mounted(){
-            this.$store.dispatch("allCategory")
+            this.$store.dispatch("allSubcategory")
         },
         created(){
-            axios.get(`editsubcategory/${this.$route.params.subcategoryid}`)
+            axios.get(`edititem/${this.$route.params.itemid}`)
                 .then((response)=>{
                     console.log(response.data)
-                    this.form.fill(response.data.subcategory)
+                    this.form.fill(response.data.item)
                 })
         },
         computed:{
-            getallCategory(){
-                return this.$store.getters.getCategory
+            getallSubCategory(){
+                return this.$store.getters.getSubcategory
             }
         },
         methods:{
-            updateSubcategory(){
-                this.form.post(`update-subcategory/${this.$route.params.subcategoryid}`)
+            updateItem(){
+                this.form.post(`update-item/${this.$route.params.itemid}`)
                     .then(()=>{
-                        this.$router.push('/subcategory-list')
+                        this.$router.push('/item-list')
                         toast({
                             type: 'success',
-                            title: 'Post Updated successfully'
+                            title: 'Item Updated successfully'
                         })
                     })
                     .catch(()=>{

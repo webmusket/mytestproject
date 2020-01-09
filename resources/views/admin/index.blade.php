@@ -78,6 +78,13 @@
         </router-link>
       </li>
 
+      <li class="nav-item">
+        <router-link class="nav-link" to="/item-list">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Item</span>
+        </router-link>
+      </li>
+
      <!--  <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>

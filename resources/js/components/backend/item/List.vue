@@ -5,11 +5,11 @@
                 <div class="col-12 ">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">SubCategory List</h3>
+                            <h3 class="card-title">Item List</h3>
 
                             <div class="card-tools">
                                 <button class="btn btn-primary">
-                                    <router-link to="/add-subcategory" style="color:#fff"> Add New Post</router-link>
+                                    <router-link to="/add-item" style="color:#fff"> Add New Item</router-link>
                                 </button>
                             </div>
                         </div>
@@ -21,22 +21,24 @@
                                 <tr>
 
                                     <th>Sl</th>
-                                    <th>Category</th>
-                                    <th>Name</th>
+                                    <th>Subcategory</th>
+                                    <th>Title</th>
+                                    <th>Price</th>
                                     <th>Action</th>
 
                                 </tr>
                                 </thead>
                                 <tbody>
 
-                                <tr v-for="(subcategory,index) in subcategories">
+                                <tr v-for="(item,index) in items">
                                     <td>{{index+1}}</td>
-                                    <td v-if="subcategory.category">{{subcategory.category.title}}</td>
-                                    <td>{{subcategory.title}}</td>
+                                    <td v-if="item.subcategory">{{item.subcategory.title}}</td>
+                                    <td>{{item.title}}</td>
+                                    <td>{{item.price}}</td>
                                     <td>
-                                        <router-link :to="`edit-subcategory/${subcategory.id}`">Edit</router-link>
+                                        <router-link :to="`edit-item/${item.id}`">Edit</router-link>
 
-                                        <a href="" @click.prevent = "deleteSubcategory(subcategory.id)" >Delete</a>
+                                        <a href="" @click.prevent = "deleteItem(item.id)" >Delete</a>
 
                                     </td>
                                 </tr>
@@ -61,19 +63,19 @@
     export default {
         name: "List",
         mounted(){
-            this.$store.dispatch('allSubcategory')
+            this.$store.dispatch('allItem')
         },
         computed:{
-            subcategories(){
-                return this.$store.getters.getSubcategory
+            items(){
+                return this.$store.getters.getItem
             }
         },
         methods:{
 
-            deleteSubcategory(id){
-               axios.get('/deleteSubcategory/'+id)
+            deleteItem(id){
+               axios.get('/deleteitem/'+id)
                    .then(()=>{
-                       this.$store.dispatch('allSubcategory')
+                       this.$store.dispatch('allItem')
                        toast({
                            type: 'success',
                            title: 'Post Deleted successfully'
