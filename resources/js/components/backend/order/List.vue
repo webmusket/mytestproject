@@ -1,7 +1,7 @@
 <template>
 	<div class="accordion" id="accordionExample">
 
-	  <div v-for="order in orders" class="card">
+	  <div  v-for="order in orders" class="card">
 
 	    <div class="card-header" id="headingOne">
 	      <h2 class="mb-0">
@@ -61,6 +61,8 @@
 	      </div>
 	    </div>
 	  </div>
+
+
 
 	</div>
 </template>

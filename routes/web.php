@@ -16,28 +16,16 @@ Route::get('/', function () {
     return view('front.index')->with(compact('catwithsubcat'));
 });
 
+Route::get('/admin', 'FrontendController@admin')->name('home');
 
 
-// Route::get('/{any}', function () {
-//   return view('front.index');
-// })->where('any', '.*');
-
-Auth::routes();
-
-
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/admin', 'HomeController@admin')->name('home');
-
-Route::group(['middleware' => ['auth']], function () {
     //Category
     Route::post('/add-category','CategoryController@add_category');
     Route::get('category','CategoryController@all_category');
     Route::get('category/{id}','CategoryController@delete_category');
     Route::get('editcategory/{id}','CategoryController@edit_category');
     Route::post('update-category/{id}','CategoryController@update_category');
-	//SubCategory
+    //SubCategory
     Route::get('/subcategory','SubcategoryController@all_subcategory');
     Route::post('/add-subcategory','SubcategoryController@save_subcategory');
     Route::get('/deleteSubcategory/{id}','SubcategoryController@delete_subcategory');
@@ -62,4 +50,18 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/deletecart/{id}','CartController@deletecart');
     Route::get('/checkout','CartController@checkout');
 
-});
+// Route::get('/{any}', function () {
+//   return view('front.index');
+// })->where('any', '.*');
+
+Auth::routes();
+
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
+

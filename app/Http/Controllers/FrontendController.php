@@ -8,6 +8,11 @@ use App\Subcategory;
 
 class FrontendController extends Controller
 {
+	public function admin()
+    {
+        return view('admin.index');
+    }
+    
     public function all_item($slug = null){
     	$subcat_id = Subcategory::where('slug',$slug)->first()->id;
     	$itemsbycat = Item::where('subcat_id',$subcat_id)->get();

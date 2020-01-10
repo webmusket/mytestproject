@@ -31,7 +31,7 @@
                                 <tr v-for="(category,index) in getallCategory" :key="category.id">
                                     <td>{{index+1}}</td>
                                     <td>{{category.title}}</td>
-                                    <td>{{category.created_at | timeformat}}</td>
+                                    <td>{{category.created_at }}</td>
                                     <td>
                                         <router-link :to="`/edit-category/${category.id}`">Edit</router-link>
                                         <a href="" @click.prevent = "deletecategory(category.id)" >Delete</a>

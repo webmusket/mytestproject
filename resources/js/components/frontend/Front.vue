@@ -88,7 +88,7 @@
 			        
 
 
-<table v-if="cart.length > 0" class="table">
+<table  class="table">
   <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
@@ -110,7 +110,7 @@
     </tr>
   </tbody>
 </table>
-<h3>The Cart is Empty</h3>
+
 
 
 			      </div>

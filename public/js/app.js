@@ -2601,6 +2601,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "List",
   mounted: function mounted() {
@@ -39898,11 +39900,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(category.title))]),
                         _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            _vm._s(_vm._f("timeformat")(category.created_at))
-                          )
-                        ]),
+                        _c("td", [_vm._v(_vm._s(category.created_at))]),
                         _vm._v(" "),
                         _c(
                           "td",
@@ -41651,59 +41649,51 @@ var render = function() {
                           _vm._m(3),
                           _vm._v(" "),
                           _c("div", { staticClass: "modal-body" }, [
-                            _vm.cart.length > 0
-                              ? _c("table", { staticClass: "table" }, [
-                                  _vm._m(4),
-                                  _vm._v(" "),
-                                  _c(
-                                    "tbody",
-                                    _vm._l(_vm.cart, function(cartitem, index) {
-                                      return _c("tr", [
-                                        _c("td", { attrs: { scope: "row" } }, [
-                                          _vm._v(_vm._s(index + 1))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(_vm._s(cartitem.item_id))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(_vm._s(cartitem.title))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(_vm._s(cartitem.price))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(_vm._s(cartitem.user_email))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _c(
-                                            "a",
-                                            {
-                                              attrs: { href: "" },
-                                              on: {
-                                                click: function($event) {
-                                                  $event.preventDefault()
-                                                  return _vm.deletecartitem(
-                                                    cartitem.id
-                                                  )
-                                                }
-                                              }
-                                            },
-                                            [_vm._v("Delete")]
-                                          )
-                                        ])
-                                      ])
-                                    }),
-                                    0
-                                  )
-                                ])
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _c("h3", [_vm._v("The Cart is Empty")])
+                            _c("table", { staticClass: "table" }, [
+                              _vm._m(4),
+                              _vm._v(" "),
+                              _c(
+                                "tbody",
+                                _vm._l(_vm.cart, function(cartitem, index) {
+                                  return _c("tr", [
+                                    _c("td", { attrs: { scope: "row" } }, [
+                                      _vm._v(_vm._s(index + 1))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(_vm._s(cartitem.item_id))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [_vm._v(_vm._s(cartitem.title))]),
+                                    _vm._v(" "),
+                                    _c("td", [_vm._v(_vm._s(cartitem.price))]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _vm._v(_vm._s(cartitem.user_email))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("td", [
+                                      _c(
+                                        "a",
+                                        {
+                                          attrs: { href: "" },
+                                          on: {
+                                            click: function($event) {
+                                              $event.preventDefault()
+                                              return _vm.deletecartitem(
+                                                cartitem.id
+                                              )
+                                            }
+                                          }
+                                        },
+                                        [_vm._v("Delete")]
+                                      )
+                                    ])
+                                  ])
+                                }),
+                                0
+                              )
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "modal-footer" }, [
