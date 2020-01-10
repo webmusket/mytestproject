@@ -15,19 +15,19 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="itemId">Title </label>
-                                    <input type="text" class="form-control" id="itemId" placeholder="Add Title" v-model="form.title" name="title" :class="{ 'is-invalid': form.errors.has('title') }">
+                                    <input type="text" class="form-control"  placeholder="Add Title" v-model="form.title" name="title" :class="{ 'is-invalid': form.errors.has('title') }">
                                     <has-error :form="form" field="title"></has-error>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="itemId">Slug </label>
-                                    <input type="text" class="form-control" id="itemId" placeholder="Add Title" v-model="form.slug" name="slug" :class="{ 'is-invalid': form.errors.has('slug') }">
+                                    <input type="text" class="form-control"  placeholder="Add Title" v-model="form.slug" name="slug" :class="{ 'is-invalid': form.errors.has('slug') }">
                                     <has-error :form="form" field="slug"></has-error>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="itemId">Price </label>
-                                    <input type="text" class="form-control" id="itemId" placeholder="Add  Price" v-model="form.price" name="price" :class="{ 'is-invalid': form.errors.has('price') }">
+                                    <input type="text" class="form-control"  placeholder="Add  Price" v-model="form.price" name="price" :class="{ 'is-invalid': form.errors.has('price') }">
                                     <has-error :form="form" field="price"></has-error>
                                 </div>
 

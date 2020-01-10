@@ -39993,8 +39993,8 @@ var render = function() {
                     "div",
                     { staticClass: "form-group" },
                     [
-                      _c("label", { attrs: { for: "subcategoryId" } }, [
-                        _vm._v("Title")
+                      _c("label", { attrs: { for: "title" } }, [
+                        _vm._v("Category Title ")
                       ]),
                       _vm._v(" "),
                       _c("input", {
@@ -40010,8 +40010,7 @@ var render = function() {
                         class: { "is-invalid": _vm.form.errors.has("title") },
                         attrs: {
                           type: "text",
-                          id: "subcategoryId",
-                          placeholder: "Add New SubCategory",
+                          placeholder: "Add New Title",
                           name: "title"
                         },
                         domProps: { value: _vm.form.title },
@@ -40126,7 +40125,6 @@ var render = function() {
                         class: { "is-invalid": _vm.form.errors.has("title") },
                         attrs: {
                           type: "text",
-                          id: "itemId",
                           placeholder: "Add New Item",
                           name: "title"
                         },
@@ -40169,7 +40167,6 @@ var render = function() {
                         class: { "is-invalid": _vm.form.errors.has("price") },
                         attrs: {
                           type: "text",
-                          id: "itemId",
                           placeholder: "Add New Item",
                           name: "price"
                         },
@@ -40483,7 +40480,6 @@ var render = function() {
                         class: { "is-invalid": _vm.form.errors.has("title") },
                         attrs: {
                           type: "text",
-                          id: "itemId",
                           placeholder: "Add Title",
                           name: "title"
                         },
@@ -40526,7 +40522,6 @@ var render = function() {
                         class: { "is-invalid": _vm.form.errors.has("slug") },
                         attrs: {
                           type: "text",
-                          id: "itemId",
                           placeholder: "Add Title",
                           name: "slug"
                         },
@@ -40569,7 +40564,6 @@ var render = function() {
                         class: { "is-invalid": _vm.form.errors.has("price") },
                         attrs: {
                           type: "text",
-                          id: "itemId",
                           placeholder: "Add  Price",
                           name: "price"
                         },
@@ -40910,7 +40904,6 @@ var render = function() {
                         class: { "is-invalid": _vm.form.errors.has("title") },
                         attrs: {
                           type: "text",
-                          id: "subcategoryId",
                           placeholder: "Add New Subcategory",
                           name: "title"
                         },
@@ -41271,7 +41264,6 @@ var render = function() {
                         class: { "is-invalid": _vm.form.errors.has("slug") },
                         attrs: {
                           type: "text",
-                          id: "subcategoryId",
                           placeholder: "Add New SubCategory",
                           name: "slug"
                         },

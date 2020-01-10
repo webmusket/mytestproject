@@ -21,7 +21,7 @@
 
                                 <div class="form-group">
                                     <label for="subcategoryId">Slug </label>
-                                    <input type="text" class="form-control" id="subcategoryId" placeholder="Add New SubCategory" v-model="form.slug" name="slug" :class="{ 'is-invalid': form.errors.has('slug') }">
+                                    <input type="text" class="form-control"  placeholder="Add New SubCategory" v-model="form.slug" name="slug" :class="{ 'is-invalid': form.errors.has('slug') }">
                                     <has-error :form="form" field="slug"></has-error>
                                 </div>
 

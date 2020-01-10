@@ -14,8 +14,8 @@
                         <form role="form" @click.prevent="addCategory()">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="subcategoryId">Title</label>
-                                    <input type="text" class="form-control" id="subcategoryId" placeholder="Add New SubCategory" v-model="form.title" name="title" :class="{ 'is-invalid': form.errors.has('title') }">
+                                    <label for="title">Category Title </label>
+                                    <input type="text" class="form-control" placeholder="Add New Title" v-model="form.title" name="title" :class="{ 'is-invalid': form.errors.has('title') }">
                                     <has-error :form="form" field="title"></has-error>
                                 </div>
 
@@ -54,7 +54,8 @@
                        this.$router.push('/category-list')
                     })
                     .catch(()=>{
-                    })
+                   })
+                   
             }
         }
     }

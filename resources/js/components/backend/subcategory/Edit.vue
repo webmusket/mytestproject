@@ -15,7 +15,7 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="subcategoryId">Update Subcategory </label>
-                                    <input type="text" class="form-control" id="subcategoryId" placeholder="Add New Subcategory" v-model="form.title" name="title" :class="{ 'is-invalid': form.errors.has('title') }">
+                                    <input type="text" class="form-control"  placeholder="Add New Subcategory" v-model="form.title" name="title" :class="{ 'is-invalid': form.errors.has('title') }">
                                     <has-error :form="form" field="title"></has-error>
                                 </div>
 
