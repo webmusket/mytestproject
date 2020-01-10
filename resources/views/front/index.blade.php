@@ -21,6 +21,13 @@
 
   <!-- Custom styles for this template-->
   <link href="{{ asset('assets/css/sb-admin-2.min.css') }}" rel="stylesheet">
+  <style type="text/css">
+    .fixed{
+          position: fixed;
+        top: 12px;
+        right: 222px;
+    }
+  </style>
 
 </head>
 
@@ -37,6 +44,11 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
+
+  <div class="fixed">
+    <a class="btn btn-primary" href="/home">Go to Home</a>
+    <a class="btn btn-primary" href="/admin">Go to Admin</a>
+  </div>
 
 </div>
   <!-- Bootstrap core JavaScript-->
