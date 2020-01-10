@@ -23,6 +23,7 @@
                                     <th>Sl</th>
                                     <th>Subcategory</th>
                                     <th>Title</th>
+                                    <th>Slug</th>
                                     <th>Price</th>
                                     <th>Action</th>
 
@@ -34,6 +35,7 @@
                                     <td>{{index+1}}</td>
                                     <td v-if="item.subcategory">{{item.subcategory.title}}</td>
                                     <td>{{item.title}}</td>
+                                    <td>{{item.slug}}</td>
                                     <td>{{item.price}}</td>
                                     <td>
                                         <router-link :to="`edit-item/${item.id}`">Edit</router-link>
@@ -76,10 +78,6 @@
                axios.get('/deleteitem/'+id)
                    .then(()=>{
                        this.$store.dispatch('allItem')
-                       toast({
-                           type: 'success',
-                           title: 'Post Deleted successfully'
-                       })
                    })
                    .catch(()=>{
                    })

@@ -14,17 +14,22 @@
                         <form role="form" @submit.prevent="addnewSubcategory()">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="subcategoryId">Add New SubCategory </label>
+                                    <label for="subcategoryId">Name </label>
                                     <input type="text" class="form-control" id="subcategoryId" placeholder="Add New SubCategory" v-model="form.title" name="title" :class="{ 'is-invalid': form.errors.has('title') }">
                                     <has-error :form="form" field="title"></has-error>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="subcategoryId">Slug </label>
+                                    <input type="text" class="form-control" id="subcategoryId" placeholder="Add New SubCategory" v-model="form.slug" name="slug" :class="{ 'is-invalid': form.errors.has('slug') }">
+                                    <has-error :form="form" field="slug"></has-error>
+                                </div>
 
                                 <div class="form-group" >
                                     <label>Select</label>
                                     <select class="form-control" :class="{ 'is-invalid': form.errors.has('cat_id') }" v-model="form.cat_id">
                                         <option disabled value="">Select One</option>
-                                        <option :value="category.id" v-for="category in getCategory">{{category.cat_name}}</option>
+                                        <option :value="category.id" v-for="category in getCategory">{{category.title}}</option>
 
                                     </select>
                                     <has-error :form="form" field="cat_id"></has-error>
@@ -55,6 +60,7 @@
             return{
                 form: new Form({
                     title:'',
+                    slug: '',
                     cat_id:'',
                 })
             }

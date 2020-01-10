@@ -23,6 +23,7 @@
                                     <th>Sl</th>
                                     <th>Category</th>
                                     <th>Name</th>
+                                    <th>Slug</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -33,6 +34,7 @@
                                     <td>{{index+1}}</td>
                                     <td v-if="subcategory.category">{{subcategory.category.title}}</td>
                                     <td>{{subcategory.title}}</td>
+                                    <td>{{subcategory.slug}}</td>
                                     <td>
                                         <router-link :to="`edit-subcategory/${subcategory.id}`">Edit</router-link>
 

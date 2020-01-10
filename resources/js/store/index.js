@@ -3,10 +3,8 @@ export default {
         category:[],
         subcategory:[],
         item:[],
-        // blogpost:[],
-        // singlepost:[],
-        // allcategories:[],
-        // latestpost:[]
+        itembycat:[],
+
     },
     getters:{
         getCategory(state){
@@ -17,13 +15,10 @@ export default {
         },
         getItem(state){
             return state.item
-        }
-        // getblogPost(state){
-        //     return state.blogpost
-        // },
-        // singlepost(state){
-        //     return state.singlepost
-        // },
+        },
+        getitembycat(state){
+            return state.itembycat
+        },
         // allcategories(state){
         //     return state.allcategories
         // },
@@ -54,27 +49,14 @@ export default {
                     context.commit('items',response.data.items)
                 })
         },
-        // getblogPost(context){
-        //     axios.get('/blogpost')
-        //         .then((response)=>{
-        //             // console.log(response.data)
-        //             context.commit('getblogPost',response.data.posts)
-        //         })
-        // },
-        // getPostById(context,payload){
-        //     axios.get('/singlepost/'+payload)
-        //         .then((response)=>{
-        //             context.commit('siglePost',response.data.post)
-        //         })
-        // },
 
-        // getPostByCatId(context,payload){
-        //     axios.get('/categorypost/'+payload)
-        //         .then((response)=>{
-        //             console.log(response.data.posts)
-        //             context.commit('getPostByCatId',response.data.posts)
-        //         })
-        // },
+        getItemByCatSlug(context,payload){
+            axios.get('/itemfor/'+payload)
+                .then((response)=>{
+                    console.log(response.data.itembycat)
+                    context.commit('getItemByCatSlug',response.data.itembycat)
+                })
+        },
         // SearchPost(context,payload){
         //     axios.get('/search?s='+payload)
         //         .then((response)=>{
@@ -100,22 +82,12 @@ export default {
         items(state,payload){
             return state.item = payload
         },
-        // getblogPost(state,payload){
-        //     return state.blogpost = payload
-        // },
-        // siglePost(state,payload){
-        //     return state.singlepost = payload
-        // },
 
-        // getPostByCatId(state,payload){
-        //     state.blogpost = payload
-        // },
-        // getSearchPost(state,payload){
-        //     state.blogpost = payload
-        // },
-        // latestpost(state,payload){
-        //     state.latestpost = payload
-        // }
+
+        getItemByCatSlug(state,payload){
+            state.itembycat = payload
+        },
+
 
 
     }

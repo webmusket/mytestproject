@@ -21,6 +21,7 @@ class ItemController extends Controller
 
         $item = new Item();
         $item->title = $request->title;
+        $item->slug = $request->slug;
         $item->price = $request->price;
         $item->subcat_id = $request->subcat_id;
         $item->save();

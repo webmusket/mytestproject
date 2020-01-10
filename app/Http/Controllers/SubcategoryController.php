@@ -21,6 +21,7 @@ class SubcategoryController extends Controller
 
         $subcategory = new Subcategory();
         $subcategory->title = $request->title;
+        $subcategory->slug = $request->slug;
         $subcategory->cat_id = $request->cat_id;
         $subcategory->save();
     }

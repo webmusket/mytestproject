@@ -12,16 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $catwithsubcat = App\Category::with('subcategories')->orderBy('id','desc')->get();
+    return view('front.index')->with(compact('catwithsubcat'));
 });
 
 
 
 // Route::get('/{any}', function () {
-//   return view('admin');
+//   return view('front.index');
 // })->where('any', '.*');
 
 Auth::routes();
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -47,4 +50,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/deleteitem/{id}','ItemController@delete_item');
     Route::get('/edititem/{id}','ItemController@edit_item');
     Route::post('/update-item/{id}','ItemController@update_item');
+
+
+    //Front Routes
+    Route::get('/itemfor/{slug}','FrontendController@all_item');
+    Route::get('/cart/{id}','CartController@addtocart');
+
 });

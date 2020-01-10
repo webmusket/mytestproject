@@ -16,6 +16,11 @@ import ItemList from './components/backend/item/List.vue'
 import AddItem from './components/backend/item/New.vue'
 import EditItem from './components/backend/item/Edit.vue'
 
+
+//frontend
+import PublicHome from './components/frontend/PublicHome.vue'
+import Items from './components/frontend/Items.vue'
+
 export const routes = [
     {
         path:'/admin',
@@ -64,17 +69,18 @@ export const routes = [
         component:EditItem
     },
 
-    // // Frontend Route
+    // Frontend Route
+    {
+        path:'/',
+        component:PublicHome
+    },
+
+    {
+        path:'/itemfor/:slug',
+        component:Items
+    },
     // {
-    //     path:'/',
-    //     component:PublicHome
-    // },
-    // {
-    //     path:'/item',
-    //     component:Items
-    // },
-    // {
-    //     path:'/item/:id',
+    //     path:'/cart/:id',
     //     component:SingleItem
     // }
 
