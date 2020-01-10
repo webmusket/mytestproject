@@ -46,7 +46,7 @@
   </a>
 
   <div class="fixed">
-    <a class="btn btn-primary" href="/home">Go to Home</a>
+    <a class="btn btn-primary" href="/home">Go to Profile</a>
     <a class="btn btn-primary" href="/admin">Go to Admin</a>
   </div>
 
