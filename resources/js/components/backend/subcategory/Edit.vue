@@ -14,9 +14,15 @@
                         <form role="form" @submit.prevent="updateSubcategory()">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="subcategoryId">Update Subcategory </label>
+                                    <label for="subcategoryId">Update Title </label>
                                     <input type="text" class="form-control"  placeholder="Add New Subcategory" v-model="form.title" name="title" :class="{ 'is-invalid': form.errors.has('title') }">
                                     <has-error :form="form" field="title"></has-error>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subcategoryId">Update Slug </label>
+                                    <input type="text" class="form-control"  placeholder="Add New Subcategory" v-model="form.slug" name="slug" :class="{ 'is-invalid': form.errors.has('slug') }">
+                                    <has-error :form="form" field="slug"></has-error>
                                 </div>
 
                                 <div class="form-group" >
@@ -56,6 +62,7 @@
                 form: new Form({
                     title:'',
                     cat_id:'',
+                    slug:''
                 })
             }
         },

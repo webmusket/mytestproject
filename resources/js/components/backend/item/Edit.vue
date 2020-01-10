@@ -20,6 +20,12 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="itemId">Title </label>
+                                    <input type="text" class="form-control"  placeholder="Add New Item" v-model="form.slug" name="slug" :class="{ 'is-invalid': form.errors.has('slug') }">
+                                    <has-error :form="form" field="slug"></has-error>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="itemId">Price</label>
                                     <input type="text" class="form-control"  placeholder="Add New Item" v-model="form.price" name="price" :class="{ 'is-invalid': form.errors.has('price') }">
                                     <has-error :form="form" field="price"></has-error>
@@ -61,8 +67,9 @@
             return{
                 form: new Form({
                     title:'',
+                    slug: '',
                     subcat_id:'',
-                    price:''
+                    price: ''
                 })
             }
         },

@@ -2279,12 +2279,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Edit",
   data: function data() {
     return {
       form: new Form({
         title: '',
+        slug: '',
         subcat_id: '',
         price: ''
       })
@@ -2678,13 +2685,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Edit",
   data: function data() {
     return {
       form: new Form({
         title: '',
-        cat_id: ''
+        cat_id: '',
+        slug: ''
       })
     };
   },
@@ -40151,6 +40165,48 @@ var render = function() {
                     { staticClass: "form-group" },
                     [
                       _c("label", { attrs: { for: "itemId" } }, [
+                        _vm._v("Title ")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.slug,
+                            expression: "form.slug"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        class: { "is-invalid": _vm.form.errors.has("slug") },
+                        attrs: {
+                          type: "text",
+                          placeholder: "Add New Item",
+                          name: "slug"
+                        },
+                        domProps: { value: _vm.form.slug },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "slug", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("has-error", {
+                        attrs: { form: _vm.form, field: "slug" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", { attrs: { for: "itemId" } }, [
                         _vm._v("Price")
                       ]),
                       _vm._v(" "),
@@ -40888,7 +40944,7 @@ var render = function() {
                     { staticClass: "form-group" },
                     [
                       _c("label", { attrs: { for: "subcategoryId" } }, [
-                        _vm._v("Update Subcategory ")
+                        _vm._v("Update Title ")
                       ]),
                       _vm._v(" "),
                       _c("input", {
@@ -40920,6 +40976,48 @@ var render = function() {
                       _vm._v(" "),
                       _c("has-error", {
                         attrs: { form: _vm.form, field: "title" }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", { attrs: { for: "subcategoryId" } }, [
+                        _vm._v("Update Slug ")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.slug,
+                            expression: "form.slug"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        class: { "is-invalid": _vm.form.errors.has("slug") },
+                        attrs: {
+                          type: "text",
+                          placeholder: "Add New Subcategory",
+                          name: "slug"
+                        },
+                        domProps: { value: _vm.form.slug },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.form, "slug", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("has-error", {
+                        attrs: { form: _vm.form, field: "slug" }
                       })
                     ],
                     1
