@@ -19,36 +19,36 @@ Route::get('/', function () {
 Route::get('/admin', 'FrontendController@admin')->name('home');
 
 
-    //Category
-    Route::post('/add-category','CategoryController@add_category');
-    Route::get('category','CategoryController@all_category');
-    Route::get('category/{id}','CategoryController@delete_category');
-    Route::get('editcategory/{id}','CategoryController@edit_category');
-    Route::post('update-category/{id}','CategoryController@update_category');
-    //SubCategory
-    Route::get('/subcategory','SubcategoryController@all_subcategory');
-    Route::post('/add-subcategory','SubcategoryController@save_subcategory');
-    Route::get('/deleteSubcategory/{id}','SubcategoryController@delete_subcategory');
-    Route::get('/editsubcategory/{id}','SubcategoryController@edit_subcategory');
-    Route::post('/update-subcategory/{id}','SubcategoryController@update_subcategory');
+//Category
+Route::post('/add-category','CategoryController@add_category');
+Route::get('category','CategoryController@all_category');
+Route::get('category/{id}','CategoryController@delete_category');
+Route::get('editcategory/{id}','CategoryController@edit_category');
+Route::post('update-category/{id}','CategoryController@update_category');
+//SubCategory
+Route::get('/subcategory','SubcategoryController@all_subcategory');
+Route::post('/add-subcategory','SubcategoryController@save_subcategory');
+Route::get('/deleteSubcategory/{id}','SubcategoryController@delete_subcategory');
+Route::get('/editsubcategory/{id}','SubcategoryController@edit_subcategory');
+Route::post('/update-subcategory/{id}','SubcategoryController@update_subcategory');
 
-    //Item
-    Route::get('/item','ItemController@all_item');
-    Route::post('/add-item','ItemController@save_item');
-    Route::get('/deleteitem/{id}','ItemController@delete_item');
-    Route::get('/edititem/{id}','ItemController@edit_item');
-    Route::post('/update-item/{id}','ItemController@update_item');
+//Item
+Route::get('/item','ItemController@all_item');
+Route::post('/add-item','ItemController@save_item');
+Route::get('/deleteitem/{id}','ItemController@delete_item');
+Route::get('/edititem/{id}','ItemController@edit_item');
+Route::post('/update-item/{id}','ItemController@update_item');
 
-    //order
-    Route::get('/orders','OrderController@getallorders');
-    Route::get('/delete-order/{id}','OrderController@deleteorder');
+//order
+Route::get('/orders','OrderController@getallorders');
+Route::get('/delete-order/{id}','OrderController@deleteorder');
 
-    //Front Routes
-    Route::get('/itemfor/{slug}','FrontendController@all_item');
-    Route::get('/cart/{id}','CartController@addtocart');
-    Route::get('/gotocart','CartController@gotocart');
-    Route::get('/deletecart/{id}','CartController@deletecart');
-    Route::get('/checkout','CartController@checkout');
+//Front Routes
+Route::get('/itemfor/{slug}','FrontendController@all_item');
+Route::get('/cart/{id}','CartController@addtocart');
+Route::get('/gotocart','CartController@gotocart');
+Route::get('/deletecart/{id}','CartController@deletecart');
+Route::get('/checkout','CartController@checkout');
 
 // Route::get('/{any}', function () {
 //   return view('front.index');

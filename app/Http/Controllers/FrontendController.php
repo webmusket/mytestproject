@@ -12,6 +12,7 @@ class FrontendController extends Controller
     {
         return view('admin.index');
     }
+
     
     public function all_item($slug = null){
     	$subcat_id = Subcategory::where('slug',$slug)->first()->id;

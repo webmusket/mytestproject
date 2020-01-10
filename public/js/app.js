@@ -3174,6 +3174,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Items",
   components: {},
@@ -41873,49 +41877,50 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    _vm._l(_vm.getitembycat, function(item) {
-      return _c(
-        "div",
-        { staticClass: "card", staticStyle: { width: "18rem" } },
-        [
-          _c("img", {
-            staticClass: "card-img-top",
-            attrs: {
-              src:
-                "https://www.gravatar.com/avatar/59a60f10561531f5719b98b55f37b481?s=300",
-              alt: ""
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("h5", { staticClass: "card-title" }, [
-              _vm._v(_vm._s(item.title))
-            ]),
+  return _c("div", { staticClass: "container" }, [
+    _c(
+      "div",
+      { staticClass: "row" },
+      _vm._l(_vm.getitembycat, function(item) {
+        return _c("div", { staticClass: "col-lg-3" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: {
+                src:
+                  "https://www.gravatar.com/avatar/59a60f10561531f5719b98b55f37b481?s=300",
+                alt: ""
+              }
+            }),
             _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v("$ " + _vm._s(item.price))
-            ]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary",
-                on: {
-                  click: function($event) {
-                    return _vm.addtocart(item.id)
+            _c("div", { staticClass: "card-body" }, [
+              _c("h5", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(item.title))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v("$ " + _vm._s(item.price))
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  on: {
+                    click: function($event) {
+                      return _vm.addtocart(item.id)
+                    }
                   }
-                }
-              },
-              [_vm._v("Add to Cart")]
-            )
+                },
+                [_vm._v("Add to Cart")]
+              )
+            ])
           ])
-        ]
-      )
-    }),
-    0
-  )
+        ])
+      }),
+      0
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

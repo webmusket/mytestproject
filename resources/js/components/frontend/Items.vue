@@ -1,13 +1,17 @@
 <template>
-	<div>
-		<div v-for="item in getitembycat" class="card" style="width: 18rem;">
-		  <img src="https://www.gravatar.com/avatar/59a60f10561531f5719b98b55f37b481?s=300" class="card-img-top" alt="">
-		  <div class="card-body">
-		    <h5 class="card-title">{{item.title}}</h5>
-		    <p class="card-text">$ {{item.price}}</p>
-		    <button @click="addtocart(item.id)" class="btn btn-primary">Add to Cart</button>
-		  </div>
-		</div>
+	<div class="container">
+        <div class="row">
+            <div v-for="item in getitembycat" class="col-lg-3">
+        		<div  class="card">
+        		  <img src="https://www.gravatar.com/avatar/59a60f10561531f5719b98b55f37b481?s=300" class="card-img-top" alt="">
+        		  <div class="card-body">
+        		    <h5 class="card-title">{{item.title}}</h5>
+        		    <p class="card-text">$ {{item.price}}</p>
+        		    <button @click="addtocart(item.id)" class="btn btn-primary">Add to Cart</button>
+        		  </div>
+        		</div>
+            </div>
+        </div>
 	</div>
 </template>
 
