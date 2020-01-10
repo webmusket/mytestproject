@@ -68,10 +68,69 @@
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
+
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
+          	<button type="button" @click="getcartitem()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+			  Cart
+			</button>
+			<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-scrollable" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			        
+
+
+<table v-if="cart.length > 0" class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Item Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Price</th>
+      <th scope="col">User Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for='(cartitem,index) in cart'>
+      <td scope="row">{{index+1}}</td>
+      <td>{{cartitem.item_id}}</td>
+      <td>{{cartitem.title}}</td>
+      <td>{{cartitem.price}}</td>
+      <td>{{cartitem.user_email}}</td>
+      <td><a href="" @click.prevent = "deletecartitem(cartitem.id)" >Delete</a></td>
+    </tr>
+  </tbody>
+</table>
+<h3>The Cart is Empty</h3>
+
+
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			        <button @click="checkout()" type="button" class="btn btn-primary">Checkout</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
+
+
+
+
             <div class="topbar-divider d-none d-sm-block"></div>
+            
+
+
 
 
           </ul>
@@ -83,7 +142,7 @@
 
       <div class="container-fluid">
       	<router-view></router-view>
-      	
+
       </div>
 
       </div>
@@ -115,10 +174,35 @@
 
 	    data(){
 	    	return{
-	    		category: JSON.parse(this.catwithsubcat)
+	    		category: JSON.parse(this.catwithsubcat),
+	    		cart: ''
 	    	}
 
 	    },
+	    methods:{
+	    	getcartitem(){
+	    		axios.get('/gotocart')
+                   .then((response)=>{
+                       // console.log(response.data)
+                       this.cart = response.data.userCart
+                   })
+	    	},
+	    	checkout(){
+	    		axios.get('/checkout')
+                   .then((response)=>{
+                       // console.log(response.data)
+                       this.$alert(response.data.message);
+                   })
+	    	},
+	    	deletecartitem(id){
+	    		axios.get('/deletecart/'+id)
+                   .then(()=>{
+                       this.getcartitem()
+                   })
+	    	}
+	    }
+
+
 
     }
 </script>

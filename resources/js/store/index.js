@@ -4,6 +4,8 @@ export default {
         subcategory:[],
         item:[],
         itembycat:[],
+        order:[]
+
 
     },
     getters:{
@@ -19,6 +21,10 @@ export default {
         getitembycat(state){
             return state.itembycat
         },
+        getorder(state){
+            return state.order
+        }
+
         // allcategories(state){
         //     return state.allcategories
         // },
@@ -57,6 +63,14 @@ export default {
                     context.commit('getItemByCatSlug',response.data.itembycat)
                 })
         },
+        getOrder(context,payload){
+            axios.get('/orders')
+                .then((response)=>{
+                    console.log(response.data.orders)
+                    context.commit('getorders',response.data.orders)
+                })
+        },
+
         // SearchPost(context,payload){
         //     axios.get('/search?s='+payload)
         //         .then((response)=>{
@@ -87,6 +101,11 @@ export default {
         getItemByCatSlug(state,payload){
             state.itembycat = payload
         },
+        getorders(state,payload){
+            state.order = payload
+        },
+
+
 
 
 

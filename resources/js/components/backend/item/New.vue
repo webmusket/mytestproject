@@ -86,10 +86,7 @@
                 this.form.post('/add-item')
                     .then(()=>{
                         this.$router.push('/item-list')
-                        toast({
-                            type: 'success',
-                            title: 'Post Added successfully'
-                        })
+
                     })
                     .catch(()=>{
                     })

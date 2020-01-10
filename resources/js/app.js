@@ -46,17 +46,12 @@ Vue.component(AlertError.name, AlertError)
 window.Form = Form;
 
 
-import swal from 'sweetalert2'
-window.swal = swal;
-const toast = swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000
-});
+import Vue from "vue";
+import VueSimpleAlert from "vue-simple-alert";
+ 
+Vue.use(VueSimpleAlert);
 
 
-window.toast = toast
 
 
 

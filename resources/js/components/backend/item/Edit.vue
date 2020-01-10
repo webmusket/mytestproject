@@ -86,10 +86,6 @@
                 this.form.post(`update-item/${this.$route.params.itemid}`)
                     .then(()=>{
                         this.$router.push('/item-list')
-                        toast({
-                            type: 'success',
-                            title: 'Item Updated successfully'
-                        })
                     })
                     .catch(()=>{
                     })

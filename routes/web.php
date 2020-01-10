@@ -51,9 +51,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/edititem/{id}','ItemController@edit_item');
     Route::post('/update-item/{id}','ItemController@update_item');
 
+    //order
+    Route::get('/orders','OrderController@getallorders');
+    Route::get('/delete-order/{id}','OrderController@deleteorder');
 
     //Front Routes
     Route::get('/itemfor/{slug}','FrontendController@all_item');
     Route::get('/cart/{id}','CartController@addtocart');
+    Route::get('/gotocart','CartController@gotocart');
+    Route::get('/deletecart/{id}','CartController@deletecart');
+    Route::get('/checkout','CartController@checkout');
 
 });

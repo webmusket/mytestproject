@@ -17,6 +17,10 @@ import AddItem from './components/backend/item/New.vue'
 import EditItem from './components/backend/item/Edit.vue'
 
 
+//oder
+import OrderList from './components/backend/order/List'
+
+
 //frontend
 import PublicHome from './components/frontend/PublicHome.vue'
 import Items from './components/frontend/Items.vue'
@@ -79,9 +83,11 @@ export const routes = [
         path:'/itemfor/:slug',
         component:Items
     },
-    // {
-    //     path:'/cart/:id',
-    //     component:SingleItem
-    // }
+
+    {
+        path: '/order-list',
+        component:OrderList
+    }
+
 
 ];

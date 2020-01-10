@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>This is Admin Page</h1>
+    	<h1>My Test Project</h1>
     </div>
 </template>
 

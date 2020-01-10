@@ -25,9 +25,11 @@
 </head>
 
 <body id="page-top">
+
 <div id="app">
+
   
-	<front catwithsubcat="{{$catwithsubcat}}"></front>
+	<front  catwithsubcat="{{$catwithsubcat}}"></front>
 
   <!-- End of Page Wrapper -->
 

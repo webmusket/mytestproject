@@ -1,6 +1,5 @@
 <template>
 	<div>
-		{{data}}
 		<div v-for="item in getitembycat" class="card" style="width: 18rem;">
 		  <img src="https://www.gravatar.com/avatar/59a60f10561531f5719b98b55f37b481?s=300" class="card-img-top" alt="">
 		  <div class="card-body">
@@ -44,7 +43,8 @@
             addtocart(id){
             	axios.get('/cart/'+id)
                    .then((response)=>{
-                       console.log(response.data)
+                    this.$alert("Item Added to Cart Successfully.");
+                       //console.log(response.data)
                    })
 
             }

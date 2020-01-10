@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h2>This is Home Page</h2>
+        <h2>Welcome to My Teast project</h2>
+        <p>go to admin first to create some category and subcategry that will be visual on our sidebar</p>
     </div>
 </template>
 
